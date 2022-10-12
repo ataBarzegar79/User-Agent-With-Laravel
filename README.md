@@ -1,7 +1,7 @@
 <h1 vertical-align="middle">
     User Agents
 </h1>
-
+ 
 <p align="left">
     <a href="https://circleci.com/gh/intoli/user-agents/tree/master">
         <img src="https://img.shields.io/circleci/project/github/intoli/user-agents/master.svg"
