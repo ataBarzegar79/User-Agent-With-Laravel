@@ -9,7 +9,7 @@ abstract class UserAgentDtoFactory
 
     public static function fromJsonData(array $response)
     {
-        return
+
 
     }
 }
