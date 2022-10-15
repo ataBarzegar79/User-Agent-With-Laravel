@@ -15,7 +15,7 @@ class UserAgentFilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'quantity' => ['int' ,'digits_between:1,1000'],
+            'quantity' => ['int' ,'gte:1',"lte:1000"],
             'device' => ['string' , Rule::in(['desktop', 'mobile', 'tablet'])],
         ];
     }
