@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\UserAgentFilterRequest;
-use Illuminate\Http\Request;
 
 define('Json_File_Path', base_path() . "/resources/src/user-agents.json");
 
