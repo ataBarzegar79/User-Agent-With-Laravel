@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UserAgentFilterRequest extends FormRequest
 {
@@ -14,8 +15,8 @@ class UserAgentFilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'quantity' => ['int'],
-            'device' => ['string'],
+            'quantity' => ['int' ,'gte:1',"lte:1000"],
+            'device' => ['string' , Rule::in(['desktop', 'mobile', 'tablet'])],
         ];
     }
 }
