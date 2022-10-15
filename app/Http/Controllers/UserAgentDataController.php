@@ -13,13 +13,13 @@ class UserAgentDataController extends Controller
     public function userAgentDataProducer(UserAgentFilterRequest $request)
     {
         $userAgents = collect(json_decode(file_get_contents(Json_File_Path), true));
-        $quantity = $request->get('quantity') ?? 4;
-        $deviceType = $request->get('device') ?? 'mobile';
+        $quantity = $request->get('quantity') ?? 1;
+        $deviceType = $request->get('device') ?? null;
 
         $fiteredUserAgents = $deviceType !== null ?
             $userAgents->filter(fn($value) => $value['deviceCategory'] === $deviceType) :
             $userAgents;
         $selectedItems = $fiteredUserAgents->random($quantity);
-        return response()->json($selectedItems);
+        return response()->json(["data" =>$selectedItems]);
     }
 }
