@@ -10,7 +10,7 @@ class UserAgentController extends Controller
 {
     public function userAgentGenerator(UserAgentFilterRequest $request): JsonResponse
     {
-        $json = json_decode(file_get_contents(base_path() . "/resources/src/user-agents.json"), true);
+        $json = json_decode(file_get_contents(base_path() . "/storage/app/src/intoli_src_file.json"), true);
         $helperArray['user_agent'] = [];
         $finalArray['user_agent'] = [];
 
