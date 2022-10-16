@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserAgentController;
 use App\Http\Controllers\UserAgentDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,5 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/user-agent-data',[UserAgentDataController::class,'userAgentDataProducer'])
+Route::get('/user-agent', [UserAgentController::class, 'userAgentGenerator'])->name('user-agent');
+
+Route::get('/user-agent-data', [UserAgentDataController::class, 'userAgentDataProducer'])
     ->name('user-agent-data');
